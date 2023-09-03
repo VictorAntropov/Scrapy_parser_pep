@@ -6,6 +6,7 @@ from pep_parse.settings import (BASE_DIR, DT_FORMAT, STATUS_SUMMARY,
 
 
 class PepParsePipeline:
+    '''Подсчитываем количество PEP по статусам и суммарное количество'''
 
     def __init__(self):
         self.results_dir = BASE_DIR / 'results'
