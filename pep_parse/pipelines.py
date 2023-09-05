@@ -1,8 +1,9 @@
 import csv
 import datetime as dt
 from collections import defaultdict
-from pep_parse.settings import (BASE_DIR, DT_FORMAT, STATUS_SUMMARY,
-                                CSV, UTF, TABLE_SUM, TOTAL)
+
+from pep_parse.settings import (BASE_DIR, CSV, DT_FORMAT, STATUS_SUMMARY,
+                                TABLE_SUM, TOTAL, UTF)
 
 
 class PepParsePipeline:

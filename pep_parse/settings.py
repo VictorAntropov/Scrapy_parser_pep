@@ -8,10 +8,10 @@ ROBOTSTXT_OBEY = True
 ALLOWED_DOMAINS = [
     'peps.python.org'
 ]
-
+CSV = 'csv'
 FEEDS = {
-    'results/pep_%(time)s.csv': {
-        'format': 'csv',
+    f'results/pep_%(time)s.{CSV}': {
+        'format': CSV,
         'fields': ['number', 'name', 'status'],
         'overwrite': True
     }
@@ -26,7 +26,6 @@ DT_FORMAT = '%Y-%m-%d_%H-%M-%S'
 STATUS_SUMMARY = 'status_summary'
 TABLE_SUM = ('Статус', 'Количество')
 TOTAL = 'Total'
-CSV = 'csv'
 UTF = 'utf-8'
 
 ALLOWED_DOMAINS = ['peps.python.org']

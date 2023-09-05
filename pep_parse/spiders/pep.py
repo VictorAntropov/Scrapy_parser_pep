@@ -8,7 +8,7 @@ class PepSpider(scrapy.Spider):
     '''PEP: собираем информацию о версиях'''
     name = 'pep'
     allowed_domains = ALLOWED_DOMAINS
-    start_urls = [f'https://{domain}/' for domain in allowed_domains]
+    start_urls = [f'https://{domain}/' for domain in ALLOWED_DOMAINS]
 
     def parse(self, response):
         '''PEP: ссылки на страницы PEP, передаем в parse_pep'''
