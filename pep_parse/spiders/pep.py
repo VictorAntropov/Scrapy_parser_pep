@@ -1,16 +1,16 @@
-import scrapy
+from scrapy import Item, Spider, http
 
 from pep_parse.items import PepParseItem
 from pep_parse.settings import ALLOWED_DOMAINS, CSSSelector
 
 
-class PepSpider(scrapy.Spider):
+class PepSpider(Spider):
     '''PEP: собираем информацию о версиях'''
     name = 'pep'
     allowed_domains = ALLOWED_DOMAINS
     start_urls = [f'https://{domain}/' for domain in ALLOWED_DOMAINS]
 
-    def parse(self, response):
+    def parse(self, response: http.Response) -> Item:
         '''PEP: ссылки на страницы PEP, передаем в parse_pep'''
         tbody_tag = response.css(CSSSelector.TBODY).css(CSSSelector.TR)
 
@@ -22,7 +22,7 @@ class PepSpider(scrapy.Spider):
             if pep_ref_get is not None:
                 yield response.follow(pep_ref_get, callback=self.parse_pep)
 
-    def parse_pep(self, response):
+    def parse_pep(self, response: http.Response) -> Item:
         '''PEP: номер, название и статус. Создание объекта Item'''
         title = response.css(f'{CSSSelector.H1}::text').get().split(' – ')
 
