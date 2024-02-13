@@ -44,6 +44,6 @@ scrapy crawl pep
 ##  Автор проекта:
 ### Антропов Виктор:
 ```
-e-mail: antropovvic1997@yandex.ru
+e-mail: AntropovVictor.V@yandex.ru
 GitHub: github.com/VictorAntropov
 ```
